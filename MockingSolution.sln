@@ -5,6 +5,7 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB4CC130-477F-4AD6-82D0-A3B96BACD417}"
 	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 		წამიკითხე.txt = წამიკითხე.txt
 	EndProjectSection
 EndProject
