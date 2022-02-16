@@ -18,7 +18,13 @@ namespace ArtGallery.Managers
         }
 
 
-
+        /// <summary>
+        /// აბრუნებს გამოფენის ფასს ფასდაკლების გათვალისწინებით
+        /// </summary>
+        /// <param name="exhibition">გამოფენა</param>
+        /// <param name="guestStatus">სტუმრის სტატუსი</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public double GetExhebitionPrice(Exhibition exhibition, GuestStatus guestStatus)
         {
             if (!_validator.IsValidPrice(exhibition.Price))
@@ -33,7 +39,11 @@ namespace ArtGallery.Managers
             return exhibition.Price * GetSalePercent(guestStatus);
         }
 
-
+        /// <summary>
+        /// აბრუნებს ფასდაკლების პროცენტს სტუმრის სტატუსის მიხედვით
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         private double GetSalePercent(GuestStatus status) =>
              status switch
              {

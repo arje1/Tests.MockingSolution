@@ -1,4 +1,4 @@
-using ArtGallery.Managers;
+﻿using ArtGallery.Managers;
 using ArtGallery.Model;
 using Moq;
 using Xunit;
@@ -10,9 +10,11 @@ namespace ArtGallery.Tests
         [Fact]
         public void SaleSeventyPercentForSchoolGuy()
         {
+            //შევქმნათ Ivalidator ინტერფეისის მოქი
             var mockValidator = new Mock<IValidator>();
             var price = 100;
 
+            //IValidator ინტერფეისის მოქში განვსაზღვროთ რას დააბრუნებს IsValidPrice მეთოდი კონკრეტული პარამეტრისთვის
             mockValidator.Setup(x => x.IsValidPrice(price)).Returns(true);
 
             var sut = new ExhibitionManager(mockValidator.Object);
@@ -28,9 +30,11 @@ namespace ArtGallery.Tests
         [Fact]
         public void SaleFiftyPercentForStudent()
         {
+            //შევქმნათ Ivalidator ინტერფეისის მოქი
             var mockValidator = new Mock<IValidator>();
             var price = 100;
 
+            //IValidator ინტერფეისის მოქში განვსაზღვროთ რას დააბრუნებს IsValidPrice მეთოდი კონკრეტული პარამეტრისთვის
             mockValidator.Setup(x => x.IsValidPrice(price)).Returns(true);
 
             var sut = new ExhibitionManager(mockValidator.Object);
