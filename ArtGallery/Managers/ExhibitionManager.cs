@@ -4,7 +4,7 @@ namespace ArtGallery.Managers
 {
     public class ExhibitionManager
     {
-        private const double MinimalPrice = 5;
+        public const int MinimalPrice = 5;
         private const double TwentyPercent = 0.8;
         private const double FiftyPercent = 0.5;
         private const double SeventyPercent = 0.3;
