@@ -6,5 +6,10 @@
         {
             throw new NotImplementedException();
         }
+
+        public void IsValidPrice(double price, out bool isValid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
