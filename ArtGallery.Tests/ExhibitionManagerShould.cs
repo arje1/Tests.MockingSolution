@@ -134,6 +134,7 @@ namespace ArtGallery.Tests
             var isValid = true;
             mockValidator.Setup(x => x.IsValidPrice(100, out isValid)); // out პარამეტრის Setup-ი.
             mockValidator.Setup(x => x.Status).Returns("Active"); // Status ფროფერთის Setup-ი.
+            mockValidator.SetupProperty(x => x.ValidationStatus); //SetupPeopery ინახავს ValidationStatus-ზე ცვლილებებს.
 
             var sut = new ExhibitionManager(mockValidator.Object);
 
@@ -144,6 +145,7 @@ namespace ArtGallery.Tests
             var newPrice = sut.GetExhebitionPrice3(exhibition, GuestStatus.CitizenAdult);
 
             //ASSERT
+            Assert.Equal(ValidationStatus.Detailed, mockValidator.Object.ValidationStatus);
             Assert.Equal(80, newPrice);
 
         }

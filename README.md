@@ -53,3 +53,6 @@ ExhibitionManager კლასში ხდება გამოფენის
 * MockBehavior.Strict - ისვრის შეცდომას თუ მოქის ერთ-ერთ მეთოდს მაინც არ აქვს Setup
 * MockBehavior.Loose - თუ მეთოდს არ აქვს Setup, გამოიყენება მეთოდის დასაბრუნებელი ტიპის default მნიშვნელობა
 * MockBehavior.Default (MockBehavior.Loose)
+
+SetupProperty და SetupAllProperties მეთოდები შეგვიძლია გამოვიყენოთ მოქირებული ობიექტის ფროფერთების ცვლილებების შესანახად და შემდგომ 
+მათი მნიშნელობების გასატესტად.

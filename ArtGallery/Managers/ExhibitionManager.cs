@@ -76,6 +76,11 @@ namespace ArtGallery.Managers
             if (_validator.Status is not "Active")
                 throw new ArgumentException("Validator Status is not active");
 
+            if (guestStatus == GuestStatus.CitizenAdult)
+            {
+                _validator.ValidationStatus = ValidationStatus.Detailed;
+            }
+
             _validator.IsValidPrice(exhibition.Price, out bool isValidPrice);
             if (!isValidPrice)
             {
