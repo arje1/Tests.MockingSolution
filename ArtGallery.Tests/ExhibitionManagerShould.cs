@@ -120,5 +120,33 @@ namespace ArtGallery.Tests
 
         }
 
+        /// <summary>
+        /// ამოწმებს რომ მოქალაქისთვის არის 20% ფასდაკლება.
+        /// </summary>
+        [Fact]
+        public void SaleTwentyPercentForCitizen()
+        {
+            //ARRANGE
+
+            var mockValidator = new Mock<IValidator>();
+            double price = 100;
+
+            var isValid = true;
+            mockValidator.Setup(x => x.IsValidPrice(100, out isValid)); // out პარამეტრის Setup-ი.
+            mockValidator.Setup(x => x.Status).Returns("Active"); // Status ფროფერთის Setup-ი.
+
+            var sut = new ExhibitionManager(mockValidator.Object);
+
+            var exhibition = new Exhibition { Price = price };
+
+            //ACT
+
+            var newPrice = sut.GetExhebitionPrice3(exhibition, GuestStatus.CitizenAdult);
+
+            //ASSERT
+            Assert.Equal(80, newPrice);
+
+        }
+
     }
 }
